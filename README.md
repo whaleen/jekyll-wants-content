@@ -1,5 +1,9 @@
 bleep bloop
 
+This will not work on gh-pages
+
+Clone and:
+
 ```bundle```
 
 ```bundle exec jekyll server```
