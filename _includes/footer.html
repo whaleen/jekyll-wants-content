@@ -1,0 +1,43 @@
+
+<div class="py-5 border-top">
+  <div class="container">
+
+    {%- if site.data.config.author -%}
+    <!-- If there is an author, show the site title as a heading here -->
+    <p class="h5 mb-3">{{site.data.config.title}}</p>
+    {%- else -%}
+    <!-- Do nothing as the author will shown directly below -->
+    {%- endif -%}
+
+
+    <div class="row">
+
+      <div class="col-sm">
+        <ul class="list-unstyled">
+          <li>
+            <!-- Author as defined in _data/config.yml -->
+            {%- if site.data.config.author -%}
+              {{ site.data.config.author | escape }}
+            {%- else -%}
+              {{ site.data.config.title | escape }}
+            {%- endif -%}
+          </li>
+          <!-- Email as defined in _data/config.yml -->
+          {%- if site.data.config.email -%}
+            <li>
+              <a href="mailto:{{ site.email }}">
+                {{ site.data.config.email }}
+              </a>
+            </li>
+          {%- endif -%}
+        </ul>
+      </div>
+
+      <div class="col-sm text-right">
+        <p>{{ site.data.config.description }}</p>
+      </div>
+
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,16 @@
+---
+layout: default
+---
+<article>
+
+  <header>
+    <h1>{{ page.title | escape }}</h1>
+  </header>
+  <p>{{ page.excerpt }}</p>
+  <img src="https://loremflickr.com/g/320/240/{{ page.img_cat }}" />
+
+  <section>
+    {{ content }}
+  </section>
+
+</article>

@@ -1,0 +1,48 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <div class="container">
+    <a class="navbar-brand" rel="author" href="{{ "/" | relative_url }}">{{site.data.config.title}}</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+
+        {% assign sortedSections = site.sections %}
+        {% for section in sortedSections %}
+        <li class="nav-item">
+          <a class="nav-link" href="{{ section.url }}">{{ section.title }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+
+<!-- Page Content -->
+<div class="container">
+
+  <h1 class="font-weight-light text-center text-lg-left mt-4 mb-0">Articles</h1>
+
+  <hr class="mt-2 mb-5">
+<p>These are generated from the _data/article.csv file:</p>
+  <div class="row text-center text-lg-left">
+
+
+    {% assign sortedArticles = site.articles %}
+    {% for article in sortedArticles %}
+    <div class="col-lg-3 col-md-4 col-6">
+          <a href="{{ article.url }}">{{ article.title }}</a>
+    </div>
+    {% endfor %}
+
+
+
+  </div>
+
+</div>
+<!-- /.container -->
+
+<!-- <img src="https://loremflickr.com/g/320/240/paris" /> -->
